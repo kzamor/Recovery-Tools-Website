@@ -37,15 +37,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $ship_date = $_POST["ship_date"];
         $order_number = $_POST["order_number"];
 
-        echo "<>" . "Hello" . "</h1>";
-        echo $first_name;
-        echo $last_name;
-        echo $street_address;
-        echo $city;
-        echo $state; 
-        echo $zip_code;
-        echo $ship_date; 
-        echo $order_number;
+        echo "<h1>SHIP TO:</h1>";
+            echo "<div></div>";
+            echo $first_name ." ". $last_name;
+            echo "<div></div>";
+            echo $street_address;
+            echo "<div></div>";
+            echo $city;
+            echo "<div></div>";
+            echo $state; 
+            echo "<div></div>";
+            echo $zip_code;
+            echo "<div></div>";
+            echo $ship_date; 
+            echo "<div></div>";
+            echo $order_number;
+            
+            echo "<img src="."./images/fedex.png>" ;
+            echo "<div></div>";
+            echo "<img src="."./images/label.png>" ;
     }
 }
 ?>
+
+

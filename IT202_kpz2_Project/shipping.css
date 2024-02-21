@@ -1,0 +1,8 @@
+h1, h3, body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #b6c2d9;
+}
+
+a[href] {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

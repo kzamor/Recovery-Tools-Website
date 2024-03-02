@@ -1,6 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate package dimensions and total declared value
+    // Kelvin Zamor, IT 202 Section 006, Phase 2 Assignment: Read SQL Data using PHP, 3/1/24
     $length = $_POST["length"];
     $width = $_POST["width"];
     $height = $_POST["height"];

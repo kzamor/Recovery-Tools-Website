@@ -1,4 +1,5 @@
 <html>
+<!-- Kelvin Zamor, IT 202 Section 006, Phase 2 Assignment: Read SQL Data using PHP, 3/1/24 -->
 <head>
     <title>Shipping</title>
     <link rel="stylesheet" href="shipping.css"/>
@@ -7,6 +8,7 @@
 <nav>
     <a href="home.php">HOME</a> |
     <a href="shipping.php">SHIPPING</a> |
+    <a href="product_page.php">PRODUCTS</a> |
 </nav>
 <h1>Shipping Page</h1>
 <h3> To: </h3>

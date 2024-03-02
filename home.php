@@ -8,6 +8,7 @@
         <nav>
             <a href="home.php">HOME</a> |
             <a href="shipping.php">SHIPPING</a> |
+            <a href="product_page.php">PRODUCTS</a> |
             </nav>
             <h1>Z-Fit Recovery Tools</h1>
         </main>
@@ -32,3 +33,4 @@
     </body>
     
 </html>
+<!--// Kelvin Zamor, IT 202 Section 006, Phase 2 Assignment: Read SQL Data using PHP, 3/1/24 -->

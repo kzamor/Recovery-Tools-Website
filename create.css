@@ -7,4 +7,12 @@ a[href] {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-/* Kelvin Zamor, IT 202 Section 006, Phase 3 Assignment:  Create SQL Data using PHP, 3/16/24 */
+main {
+    border: 2px solid #5b8bb4;
+    width: 1000px;
+    margin: 20px;
+    padding: 10px;
+    height: 100px;
+    text-align: center;
+  
+}

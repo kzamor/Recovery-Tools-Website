@@ -9,7 +9,7 @@
             <a href="home.php">HOME</a> |
             <a href="shipping.php">SHIPPING</a> |
             <a href="product_page.php">PRODUCTS</a> |
-            </nav>
+        </nav>
             <h1>Z-Fit Recovery Tools</h1>
         </main>
             <h2>HOME</h2>
@@ -33,4 +33,4 @@
     </body>
     
 </html>
-<!--// Kelvin Zamor, IT 202 Section 006, Phase 2 Assignment: Read SQL Data using PHP, 3/1/24 -->
+<!--Kelvin Zamor, IT 202 Section 006, Phase 3 Assignment:  Create SQL Data using PHP, 3/16/24 -->

@@ -10,4 +10,4 @@
     </body>
 </html>
 
-<!-- Kelvin Zamor, IT 202 Section 006, Phase 3 Assignment:  Create SQL Data using PHP, 3/16/24 -->
+<!-- Kelvin Zamor, IT 202 Section 006, Phase 4 Assignment: PHP Authentication and Delete SQL Data, 4/5/24 -->

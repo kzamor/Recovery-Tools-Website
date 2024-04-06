@@ -1,6 +1,14 @@
 <?php
-// Kelvin Zamor, IT 202 Section 006, Phase 3 Assignment:  Create SQL Data using PHP, 3/16/24
+// Kelvin Zamor, IT 202 Section 006, Phase 4 Assignment: PHP Authentication and Delete SQL Data, 4/5/24
 require_once('database_njit.php');
+$db = getDB();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+$getCredentials = isset($_SESSION['getCredentials']) ? $_SESSION['getCredentials'] : null;
+
+
 
 // get categories from the database
 $queryCategories = 'SELECT recoveryToolCategoryID, recoveryToolCategoryName FROM recoveryToolCategories';
@@ -46,9 +54,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <nav>
-        <a href="home.php">HOME</a> |
-        <a href="shipping.php">SHIPPING</a> |
-        <a href="product_page.php">PRODUCTS</a> |
+    <a href="home.php">HOME</a> |
+            <a href="product_page.php">PRODUCTS</a> |
+            <?php
+            
+            
+            if (isset($_SESSION['is_valid_admin'])){
+
+                echo " <a href=\"shipping.php\">SHIPPING</a> |";
+                echo " <a href=\"create.php\">CREATE</a> |";
+                echo " <a href=\"logout.php\">Log Out</a> |";
+                echo "<p> Welcome {$getCredentials['firstName']} {$getCredentials['lastName']} ({$getCredentials['emailAddress']}) <p>";
+            }
+
+            else{
+                echo " <a href=\"login.php\">Log In</a> |";
+            }
+
+            ?>
     </nav>
     <h1>Z-Fit Recovery Tools</h1>
     

@@ -1,8 +1,14 @@
 <?php
-// Kelvin Zamor, IT 202 Section 006, Phase 3 Assignment:  Create SQL Data using PHP, 3/16/24
+// Kelvin Zamor, IT 202 Section 006, Phase 4 Assignment: PHP Authentication and Delete SQL Data, 4/5/24
 // TODO use database_local.php OR database_njit.php
 require_once('database_njit.php');
 
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+
+$db = getDB();
+$getCredentials = isset($_SESSION['getCredentials']) ? $_SESSION['getCredentials'] : null;
 // Get category ID
 $category_id = filter_input(INPUT_GET, 'category_id', FILTER_VALIDATE_INT);
 if ($category_id == NULL || $category_id == FALSE) {
@@ -43,9 +49,24 @@ $statement3->closeCursor();
 <head>
 <main>
         <nav>
-            <a href="home.php">HOME</a> |
-            <a href="shipping.php">SHIPPING</a> |
+        <a href="home.php">HOME</a> |
             <a href="product_page.php">PRODUCTS</a> |
+            <?php
+            
+            
+            if (isset($_SESSION['is_valid_admin'])){
+
+                echo " <a href=\"shipping.php\">SHIPPING</a> |";
+                echo " <a href=\"create.php\">CREATE</a> |";
+                echo " <a href=\"logout.php\">Log Out</a> |";
+                echo "<p> Welcome {$getCredentials['firstName']} {$getCredentials['lastName']} ({$getCredentials['emailAddress']}) <p>";
+            }
+
+            else{
+                echo " <a href=\"login.php\">Log In</a> |";
+            }
+
+            ?>
             </nav>
             <h1>Z-Fit Recovery Tools</h1>
 </main>
@@ -91,6 +112,15 @@ $statement3->closeCursor();
         <td><?php echo $product['recoveryToolName']; ?></td>
         <td><?php echo $product['description']; ?></td>
         <td><?php echo $product['price']; ?></td>
+        <!--delete only appears if user is logged in-->
+        <?php if (isset($_SESSION['is_valid_admin'])) : ?>
+        <td>
+        <form action="delete.php" method="post">
+          <input type="hidden" name="recoveryToolCode" value="<?php echo $product['recoveryToolCode']; ?>">
+          <input type="submit" value="Delete">
+        </form>
+        </td>
+        <?php endif; ?>
       </tr>
       <?php endforeach; ?>      
     </table>

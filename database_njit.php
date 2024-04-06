@@ -1,4 +1,5 @@
 <?php
+function getDB(){
 //slide 24
 $dsn = 'mysql:host=sql1.njit.edu;port=3306;dbname=kpz2';
 $username = 'kpz2';
@@ -12,5 +13,7 @@ try {
     include('database_error.php');
     exit();
 }
-// Kelvin Zamor, IT 202 Section 006, Phase 3 Assignment:  Create SQL Data using PHP, 3/16/24 
+return $db;
+}
+// Kelvin Zamor, IT 202 Section 006, Phase 4 Assignment: PHP Authentication and Delete SQL Data, 4/5/24 
 ?>

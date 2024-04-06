@@ -1,15 +1,41 @@
+<?php
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+$getCredentials = isset($_SESSION['getCredentials']) ? $_SESSION['getCredentials'] : null;
+?>
+
 <html>
     <head>
         <title>Z-Fit Recovery Tools</title>
         <link rel="stylesheet" href="home.css"/>
+
     </head>
     <body>
         <main>
+      
         <nav>
             <a href="home.php">HOME</a> |
-            <a href="shipping.php">SHIPPING</a> |
             <a href="product_page.php">PRODUCTS</a> |
+            <?php
+            
+            
+            if (isset($_SESSION['is_valid_admin'])){
+
+                echo " <a href=\"shipping.php\">SHIPPING</a> |";
+                echo " <a href=\"create.php\">CREATE</a> |";
+                echo " <a href=\"logout.php\">Log Out</a> |";
+                echo "<p> Welcome {$getCredentials['firstName']} {$getCredentials['lastName']} ({$getCredentials['emailAddress']}) <p>";
+            }
+
+            else{
+                echo " <a href=\"login.php\">Log In</a> |";
+            }
+
+            ?>
         </nav>
+
             <h1>Z-Fit Recovery Tools</h1>
         </main>
             <h2>HOME</h2>
@@ -24,6 +50,10 @@
             <img src="./images/usemassagegun.jpg" alt="Person using a massage gun" style="width:200px;height:120px;">
             <br></br>
             <img src="./images/usingyogawheel.jpg" alt="Person using a yoga wheel" style="width:200px;height:120px;">
+
+            <?php
+                echo $_SESSION['is_valid_admin'];
+            ?>
         
         <footer>  
         <h5>
@@ -33,4 +63,4 @@
     </body>
     
 </html>
-<!--Kelvin Zamor, IT 202 Section 006, Phase 3 Assignment:  Create SQL Data using PHP, 3/16/24 -->
+<!--Kelvin Zamor, IT 202 Section 006, Phase 4 Assignment: PHP Authentication and Delete SQL Data, 4/5/24 -->

@@ -45,5 +45,17 @@ $login_message = 'You must login to view this page.';
    </form>
    <p><?php echo $login_message; ?></p>
  </main>
+ <footer>  
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <h5>
+        <p>Z-Fit Recovery Tools | Founded in 2020 | 323 Dr Martin Luther King Jr Blvd, Newark, NJ 07102| 973-444-9015 | kpz2@njit.edu </p>
+        </h5>
+        </footer>
  </body>
 </html>

@@ -21,5 +21,5 @@ function addZFitmanager($email, $password, $firstName, $lastName) {
 //addZFitmanager('admin@njit.edu', 'IT202', 'admin', '1');
 //addZFitmanager('admin2@njit.edu', 'IT202', 'admin', '2');
 
-//Kelvin Zamor, IT 202 Section 006, Phase 4 Assignment: PHP Authentication and Delete SQL Data, 4/5/24
+//<!--Kelvin Zamor, IT 202 Section 006, Phase 5 Assignment: Read SQL Data with PHP and JavaScript, 4/19/24 -->
 ?>

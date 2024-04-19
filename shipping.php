@@ -1,6 +1,5 @@
 <html>
-<!-- Kelvin Zamor, IT 202 Section 006, Phase 4 Assignment: PHP Authentication and Delete SQL Data, 4/5/24 -->
-<head>
+<!--Kelvin Zamor, IT 202 Section 006, Phase 5 Assignment: Read SQL Data with PHP and JavaScript, 4/19/24 -->
     <title>Shipping</title>
     <link rel="stylesheet" href="shipping.css"/>
 </head>

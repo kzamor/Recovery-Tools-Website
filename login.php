@@ -1,5 +1,5 @@
 <?php 
-// Kelvin Zamor, IT 202 Section 006, Phase 4 Assignment: PHP Authentication and Delete SQL Data, 4/5/24
+// <!--Kelvin Zamor, IT 202 Section 006, Phase 5 Assignment: Read SQL Data with PHP and JavaScript, 4/19/24 -->
 if (!isset($login_message)) {
 $login_message = 'You must login to view this page.';
 }

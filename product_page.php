@@ -1,5 +1,5 @@
 <?php
-// Kelvin Zamor, IT 202 Section 006, Phase 4 Assignment: PHP Authentication and Delete SQL Data, 4/5/24
+// <!--Kelvin Zamor, IT 202 Section 006, Phase 5 Assignment: Read SQL Data with PHP and JavaScript, 4/19/24 -->
 // TODO use database_local.php OR database_njit.php
 require_once('database_njit.php');
 
@@ -106,19 +106,35 @@ $statement3->closeCursor();
         <th>Price</th>
       </tr>
 
+    <!--Delete Confirmation Dialouge Box -->
+    <script>
+    
+    function confirmDelete() {
+      const confirmDelete = confirm("Are you sure you want to delete this item?");
+      if (confirmDelete) {
+        console.log("delete confirmed");
+        return true;
+      } else {
+        console.log("delete canceled");
+        return false;
+      }
+    }
+    </script>
+
       <?php foreach ($products as $product) : ?>
       <tr>
-        <td><?php echo $product['recoveryToolCode']; ?></td>
+        <!--hyperlink to details page-->
+        <td><a href= "details.php?product_id=<?php echo $product['recoveryToolCode']; ?>"><?php echo $product['recoveryToolCode']; ?></a></td>
         <td><?php echo $product['recoveryToolName']; ?></td>
         <td><?php echo $product['description']; ?></td>
         <td><?php echo $product['price']; ?></td>
         <!--delete only appears if user is logged in-->
         <?php if (isset($_SESSION['is_valid_admin'])) : ?>
-        <td>
-        <form action="delete.php" method="post">
-          <input type="hidden" name="recoveryToolCode" value="<?php echo $product['recoveryToolCode']; ?>">
-          <input type="submit" value="Delete">
-        </form>
+          <td>
+          <form action="delete.php" method="post" onsubmit="return confirmDelete()">
+            <input type="hidden" name="recoveryToolCode" value="<?php echo $product['recoveryToolCode']; ?>">
+            <input type="submit" value="Delete">
+          </form>
         </td>
         <?php endif; ?>
       </tr>
